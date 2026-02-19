@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaunchWave — Launch Your Startup</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="LaunchWave helps you plan, launch, and grow your startup with modern tools, templates, and guidance." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="LaunchWave — Launch Your Startup" />
+    <meta property="og:description" content="LaunchWave helps you plan, launch, and grow your startup with modern tools, templates, and guidance." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/og-image.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LaunchWave — Launch Your Startup" />
+    <meta name="twitter:description" content="LaunchWave helps you plan, launch, and grow your startup with modern tools, templates, and guidance." />
+    <meta name="twitter:image" content="https://example.com/og-image.jpg" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous" />
+
+    <!-- ============ Custom CSS ============ -->
+    <style>
+        /* ---- Theme accent color (customise here) ---- */
+        
+         :root {
+            --accent: #10b981;
+            --accent-hover: #059669;
+            --gradient-start: #10b981;
+            --gradient-end: #34d399;
+            --accent-bg: rgba(16, 185, 129, .1);
+            --accent-bg-dark: rgba(16, 185, 129, .25);
+        }
+        /* ---- General ---- */
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Outfit', 'DM Sans', system-ui, -apple-system, sans-serif;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--accent-hover);
+            border-color: var(--accent-hover);
+            color: #fff;
+        }
+        
+        .btn-outline-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+        .btn-outline-accent:hover {
+            background-color: var(--accent);
+            color: #fff;
+        }
+        /* ---- Navbar ---- */
+        
+        .navbar {
+            transition: background-color .3s;
+        }
+        /* ---- Hero Section ---- */
+        
+        #hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            display: flex;
+            align-items: center;
+        }
+        
+        #hero h1 {
+            font-weight: 800;
+        }
+        
+        #hero .hero-img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* ---- Feature Cards ---- */
+        
+        .feature-card {
+            transition: transform .3s, box-shadow .3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .12) !important;
+        }
+        
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+            background-color: var(--accent-bg);
+            color: var(--accent);
+        }
+        /* ---- Pricing ---- */
+        
+        .pricing-card {
+            transition: transform .3s, box-shadow .3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-6px);
+        }
+        
+        .pricing-popular {
+            border: 2px solid var(--accent);
+        }
+        /* ---- Testimonials ---- */
+        
+        .testimonial-avatar {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+        }
+        /* ---- CTA Banner ---- */
+        
+        #cta-banner {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+        }
+        /* ---- Footer ---- */
+        
+        footer a {
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* ---- Dark mode overrides ---- */
+        
+        [data-bs-theme="dark"] .feature-icon {
+            background-color: var(--accent-bg-dark);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary shadow-sm">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold fs-4" href="#">
+                <i class="bi bi-rocket-takeoff me-2 text-primary"></i>LaunchWave
+            </a>
+
+            <!-- Mobile toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <!-- CTA -->
+                <a href="#cta-banner" class="btn btn-accent btn-sm rounded-pill px-3 me-2">Get Started</a>
+                <!-- Dark Mode Toggle -->
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3" id="darkModeToggle" type="button" aria-label="Toggle dark mode">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+    <section id="hero">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Text -->
+                <div class="col-lg-6 text-white">
+                    <h1 class="display-3 mb-3">Launch Your Next Big Idea Today</h1>
+                    <p class="lead mb-4 opacity-75">
+                        LaunchWave gives you the tools, templates, and analytics to turn your vision into a thriving SaaS product — fast.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#pricing" class="btn btn-light btn-lg rounded-pill px-4 fw-semibold">
+              Start Free Trial
+            </a>
+                        <a href="#features" class="btn btn-outline-light btn-lg rounded-pill px-4">
+              Learn More
+            </a>
+                    </div>
+                </div>
+                <!-- Hero Image -->
+                <div class="col-lg-6 text-center">
+                    <img src="https://illustrations.popsy.co/white/app-launch.svg" alt="App launch illustration" class="hero-img" width="500" height="500" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22500%22 height=%22500%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23e9ecef%22 rx=%2220%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236c757d%22 font-size=%2224%22>Image unavailable</text></svg>'"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FEATURES SECTION
+       ============================================================ -->
+    <section id="features" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Why Choose LaunchWave?</h2>
+                <p class="text-body-secondary mx-auto" style="max-width:600px;">
+                    Everything you need to ship faster, grow smarter, and delight your customers.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Feature 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card border-0 shadow rounded-4 h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 feature-icon">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+                        <h5 class="fw-semibold">Blazing Fast</h5>
+                        <p class="text-body-secondary mb-0">
+                            Optimised infrastructure ensures your app loads in milliseconds, anywhere in the world.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card border-0 shadow rounded-4 h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 feature-icon">
+                            <i class="bi bi-shield-lock-fill"></i>
+                        </div>
+                        <h5 class="fw-semibold">Enterprise Security</h5>
+                        <p class="text-body-secondary mb-0">
+                            End-to-end encryption and SOC 2 compliance keep your data safe at every step.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card border-0 shadow rounded-4 h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 feature-icon">
+                            <i class="bi bi-bar-chart-line-fill"></i>
+                        </div>
+                        <h5 class="fw-semibold">Real-Time Analytics</h5>
+                        <p class="text-body-secondary mb-0">
+                            Beautiful dashboards with live metrics so you can make data-driven decisions.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card border-0 shadow rounded-4 h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 feature-icon">
+                            <i class="bi bi-puzzle-fill"></i>
+                        </div>
+                        <h5 class="fw-semibold">Easy Integrations</h5>
+                        <p class="text-body-secondary mb-0">
+                            Connect with Slack, Stripe, Zapier, and 200+ tools in a few clicks.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card border-0 shadow rounded-4 h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 feature-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h5 class="fw-semibold">Team Collaboration</h5>
+                        <p class="text-body-secondary mb-0">
+                            Invite your team, assign roles, and collaborate in real time without friction.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card border-0 shadow rounded-4 h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 feature-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h5 class="fw-semibold">24/7 Support</h5>
+                        <p class="text-body-secondary mb-0">
+                            Our expert team is always available to help you succeed, day or night.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       ABOUT SECTION
+       ============================================================ -->
+    <section id="about" class="py-5 bg-body-secondary">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <!-- Image -->
+                <div class="col-lg-6">
+                    <img src="https://illustrations.popsy.co/white/remote-work.svg" alt="Team working together" class="img-fluid rounded-4 shadow" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22600%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23e9ecef%22 rx=%2220%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236c757d%22 font-size=%2224%22>Image unavailable</text></svg>'"
+                    />
+                </div>
+                <!-- Text -->
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-3">Built for Modern Teams</h2>
+                    <p class="text-body-secondary mb-4">
+                        LaunchWave was designed from the ground up to help fast-moving teams ship products without compromise. Here's what sets us apart:
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i> No-code dashboard builder
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i> One-click deployments with rollback
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i> Built-in A/B testing engine
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i> GDPR &amp; CCPA compliant out of the box
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i> Scales from zero to millions of users
+                        </li>
+                    </ul>
+                    <a href="#pricing" class="btn btn-accent rounded-pill px-4 mt-2">See Plans</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       PRICING SECTION
+       ============================================================ -->
+    <section id="pricing" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Simple, Transparent Pricing</h2>
+                <p class="text-body-secondary mx-auto" style="max-width:600px;">
+                    No hidden fees. Cancel any time. Start with a free 14-day trial.
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Starter -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card pricing-card border-0 shadow rounded-4 h-100 text-center p-4">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-semibold">Starter</h5>
+                            <p class="display-5 fw-bold my-3">$0<small class="fs-6 fw-normal text-body-secondary">/mo</small></p>
+                            <ul class="list-unstyled text-body-secondary mb-4">
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> 1 Project</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> 1 GB Storage</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> Community Support</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-accent rounded-pill mt-auto">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pro (Popular) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card pricing-card pricing-popular border-0 shadow-lg rounded-4 h-100 text-center p-4 position-relative">
+                        <span class="badge bg-warning text-dark position-absolute top-0 start-50 translate-middle rounded-pill px-3 py-2">
+              Most Popular
+            </span>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-semibold">Pro</h5>
+                            <p class="display-5 fw-bold my-3">$29<small class="fs-6 fw-normal text-body-secondary">/mo</small></p>
+                            <ul class="list-unstyled text-body-secondary mb-4">
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> 10 Projects</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> 50 GB Storage</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> Priority Support</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> Advanced Analytics</li>
+                            </ul>
+                            <button type="button" class="btn btn-accent rounded-pill mt-auto">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Enterprise -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card pricing-card border-0 shadow rounded-4 h-100 text-center p-4">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fw-semibold">Enterprise</h5>
+                            <p class="display-5 fw-bold my-3">$99<small class="fs-6 fw-normal text-body-secondary">/mo</small></p>
+                            <ul class="list-unstyled text-body-secondary mb-4">
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> Unlimited Projects</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> 500 GB Storage</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> Dedicated Account Manager</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-success me-1"></i> Custom Integrations</li>
+                            </ul>
+                            <button type="button" class="btn btn-outline-accent rounded-pill mt-auto">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       TESTIMONIALS SECTION
+       ============================================================ -->
+    <section id="testimonials" class="py-5 bg-body-secondary">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">What Our Customers Say</h2>
+                <p class="text-body-secondary mx-auto" style="max-width:600px;">
+                    Thousands of teams trust LaunchWave to power their products.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Testimonial 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow rounded-4 h-100 p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/64?img=12" alt="Sarah Chen" class="rounded-circle testimonial-avatar me-3" width="64" height="64" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2264%22 height=%2264%22><circle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22%23dee2e6%22/><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236c757d%22 font-size=%2220%22>SC</text></svg>'"
+                            />
+                            <div>
+                                <h6 class="mb-0 fw-semibold">Sarah Chen</h6>
+                                <small class="text-body-secondary">CTO, Flowstate</small>
+                            </div>
+                        </div>
+                        <p class="text-body-secondary mb-0">
+                            "LaunchWave cut our deployment time by 60%. The analytics dashboard alone is worth the subscription."
+                        </p>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow rounded-4 h-100 p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/64?img=32" alt="James Okoro" class="rounded-circle testimonial-avatar me-3" width="64" height="64" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2264%22 height=%2264%22><circle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22%23dee2e6%22/><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236c757d%22 font-size=%2220%22>JO</text></svg>'"
+                            />
+                            <div>
+                                <h6 class="mb-0 fw-semibold">James Okoro</h6>
+                                <small class="text-body-secondary">Founder, Apilytics</small>
+                            </div>
+                        </div>
+                        <p class="text-body-secondary mb-0">
+                            "Switching to LaunchWave was the best decision we made. Our team ships twice as fast with half the friction."
+                        </p>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow rounded-4 h-100 p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/64?img=47" alt="Maria Lopez" class="rounded-circle testimonial-avatar me-3" width="64" height="64" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2264%22 height=%2264%22><circle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22%23dee2e6%22/><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%236c757d%22 font-size=%2220%22>ML</text></svg>'"
+                            />
+                            <div>
+                                <h6 class="mb-0 fw-semibold">Maria Lopez</h6>
+                                <small class="text-body-secondary">PM, NovaTech</small>
+                            </div>
+                        </div>
+                        <p class="text-body-secondary mb-0">
+                            "The integrations are seamless and support is phenomenal. I can't imagine running our product without it."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       CTA SECTION
+       ============================================================ -->
+    <section id="cta-banner" class="py-5 text-white">
+        <div class="container py-5 text-center" style="border-radius:1.5rem;">
+            <div class="py-4 px-3">
+                <h2 class="fw-bold display-5 mb-3">Ready to Accelerate Your Growth?</h2>
+                <p class="lead opacity-75 mb-4 mx-auto" style="max-width:600px;">
+                    Join 5,000+ teams already using LaunchWave. Start your free 14-day trial — no credit card required.
+                </p>
+                <a href="#pricing" class="btn btn-light btn-lg rounded-pill px-5 fw-semibold">
+          Start Free Trial
+        </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+    <section id="contact" class="py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold mb-3 text-center">Contact Us</h2>
+                    <p class="text-center text-body-secondary mb-4">
+                        Have questions about LaunchWave or need help getting started? Drop us a message and our team will get back to you shortly.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="contactName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="contactName" placeholder="Your name" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="you@example.com" required />
+                            </div>
+                            <div class="col-12">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control" id="contactMessage" rows="4" placeholder="How can we help?" required></textarea>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button type="submit" class="btn btn-accent rounded-pill px-4">
+                  Send Message
+                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="small text-body-secondary mt-3 text-center">
+                        Prefer email? Reach us at
+                        <a href="mailto:support@launchwave.io">support@launchwave.io</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Column 1 – Brand -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-rocket-takeoff me-2"></i>LaunchWave
+                    </h5>
+                    <p class="text-white-50 small">
+                        Ship faster. Scale smarter. Delight your customers with the modern SaaS platform built for ambitious teams.
+                    </p>
+                </div>
+                <!-- Column 2 – Product -->
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-semibold mb-3">Product</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#features" class="text-white-50">Features</a></li>
+                        <li class="mb-2"><a href="#pricing" class="text-white-50">Pricing</a></li>
+                        <li class="mb-2"><span class="text-white-50" title="Coming Soon">Changelog</span></li>
+                        <li class="mb-2"><span class="text-white-50" title="Coming Soon">Docs</span></li>
+                    </ul>
+                </div>
+                <!-- Column 3 – Company -->
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-semibold mb-3">Company</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#about" class="text-white-50">About</a></li>
+                        <li class="mb-2"><span class="text-white-50" title="Coming Soon">Blog</span></li>
+                        <li class="mb-2"><span class="text-white-50" title="Coming Soon">Careers</span></li>
+                        <li class="mb-2"><a href="#contact" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4 – Social -->
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-semibold mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3 fs-5">
+                        <span class="text-white-50" role="img" aria-label="Twitter"><i class="bi bi-twitter-x"></i></span>
+                        <span class="text-white-50" role="img" aria-label="GitHub"><i class="bi bi-github"></i></span>
+                        <span class="text-white-50" role="img" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></span>
+                        <span class="text-white-50" role="img" aria-label="YouTube"><i class="bi bi-youtube"></i></span>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4" />
+            <p class="text-center text-white-50 small mb-0">
+                &copy; 2026 LaunchWave. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        const THEME_STORAGE_KEY = 'launchwave-theme';
+        const toggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        function applyTheme(theme) {
+            html.setAttribute('data-bs-theme', theme);
+            if (toggle) {
+                toggle.innerHTML = theme === 'dark' ?
+                    '<i class="bi bi-sun-fill"></i>' :
+                    '<i class="bi bi-moon-stars-fill"></i>';
+            }
+        }
+
+        (function initTheme() {
+            try {
+                var storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+                if (storedTheme === 'dark' || storedTheme === 'light') {
+                    applyTheme(storedTheme);
+                    return;
+                }
+            } catch (e) { /* localStorage unavailable */ }
+            applyTheme(html.getAttribute('data-bs-theme') || 'light');
+        })();
+
+        if (toggle) {
+            toggle.addEventListener('click', function() {
+                var isDark = html.getAttribute('data-bs-theme') === 'dark';
+                var newTheme = isDark ? 'light' : 'dark';
+                applyTheme(newTheme);
+                try {
+                    localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+                } catch (e) { /* ignore */ }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
